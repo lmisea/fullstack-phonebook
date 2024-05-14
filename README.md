@@ -15,4 +15,4 @@ Exercises from the part 3 of the [Full Stack open course](https://fullstackopen.
 
 ## Exercises
 
-- [ ] 3.1 - 3.6
+- [x] 3.1 - 3.6: [Phonebook backend](index.js)
