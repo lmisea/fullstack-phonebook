@@ -55,6 +55,14 @@ app.get('/api/persons/:id', (request, response) => {
   else response.status(404).end()
 })
 
+// Delete a person by id
+app.delete('/api/persons/:id', (request, response) => {
+  const id = Number(request.params.id)
+  persons = persons.filter((person) => person.id !== id)
+
+  response.status(204).end()
+})
+
 // Start the server
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`)
