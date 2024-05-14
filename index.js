@@ -26,6 +26,9 @@ let persons = [
   },
 ]
 
+// Configure express to parse the body of the request as JSON
+app.use(express.json())
+
 // Root route
 app.get('/', (request, response) => {
   response.send('<h1>Full Stack Phonebook!</h1>')
@@ -61,6 +64,25 @@ app.delete('/api/persons/:id', (request, response) => {
   persons = persons.filter((person) => person.id !== id)
 
   response.status(204).end()
+})
+
+// Generate a new id
+const generateId = () => {
+  return Math.floor(Math.random() * 9999)
+}
+
+// Add a new person
+app.post('/api/persons', (request, response) => {
+  const body = request.body
+
+  const person = {
+    id: generateId(),
+    name: body.name,
+    number: body.number,
+  }
+
+  persons = persons.concat(person)
+  response.json(person)
 })
 
 // Start the server
