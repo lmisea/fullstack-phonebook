@@ -27,9 +27,19 @@ let persons = [
   },
 ]
 
+// Return the request body if it's a POST request
+morgan.token('req-body', (req, res) => {
+  if (req.method === 'POST') return JSON.stringify(req.body)
+})
+
 // Middlewares
 app.use(express.json()) // Parse req body to json
-app.use(morgan('tiny')) // Log requests
+// Log requests
+app.use(
+  morgan(
+    ':method :url :status :res[content-length] - :response-time ms :req-body'
+  )
+)
 
 // Root route
 app.get('/', (request, response) => {
