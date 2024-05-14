@@ -16,3 +16,4 @@ Exercises from the part 3 of the [Full Stack open course](https://fullstackopen.
 ## Exercises
 
 - [x] 3.1 - 3.6: [Phonebook backend](index.js)
+- [ ] 3.7 - 3.8: [Phonebook backend](index.js)

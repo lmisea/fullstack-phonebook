@@ -1,4 +1,5 @@
 const express = require('express')
+const morgan = require('morgan')
 
 const app = express()
 const PORT = 3001
@@ -26,8 +27,9 @@ let persons = [
   },
 ]
 
-// Configure express to parse the body of the request as JSON
-app.use(express.json())
+// Middlewares
+app.use(express.json()) // Parse req body to json
+app.use(morgan('tiny')) // Log requests
 
 // Root route
 app.get('/', (request, response) => {
