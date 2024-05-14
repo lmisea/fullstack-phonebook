@@ -36,6 +36,16 @@ app.get('/api/persons', (request, response) => {
   response.json(persons)
 })
 
+// Get the amount of persons in the phonebook and the request time
+app.get('/info', (request, response) => {
+  const date = new Date()
+
+  response.send(
+    `<p>Phonebook has info for ${persons.length} people</p>
+    <p>${date}</p>`
+  )
+})
+
 // Start the server
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`)
