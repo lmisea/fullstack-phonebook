@@ -46,6 +46,15 @@ app.get('/info', (request, response) => {
   )
 })
 
+// Fetch a single person by id
+app.get('/api/persons/:id', (request, response) => {
+  const id = Number(request.params.id)
+  const person = persons.find((person) => person.id === id)
+
+  if (person) response.json(person)
+  else response.status(404).end()
+})
+
 // Start the server
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`)
