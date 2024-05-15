@@ -1,5 +1,6 @@
 const express = require('express')
 const morgan = require('morgan')
+const cors = require('cors')
 
 const app = express()
 const PORT = 3001
@@ -40,6 +41,7 @@ app.use(
     ':method :url :status :res[content-length] - :response-time ms :req-body'
   )
 )
+app.use(cors()) // Allow cross-origin requests
 
 // Root route
 app.get('/', (request, response) => {
