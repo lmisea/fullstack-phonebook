@@ -18,4 +18,4 @@ Exercises from the part 3 of the [Full Stack open course](https://fullstackopen.
 - [x] 3.1 - 3.6: [Phonebook backend](index.js)
 - [x] 3.7 - 3.8: [Phonebook backend](index.js)
 - [x] 3.9: [Phonebook frontend](./frontend/)
-- [ ] 3.10 - 3.11: [Full stack phonebook app deployed to Render]
+- [x] 3.10 - 3.11: [Full stack phonebook app deployed to Render](https://fullstack-phonebook-mnwb.onrender.com)

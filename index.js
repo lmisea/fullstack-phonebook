@@ -42,6 +42,7 @@ app.use(
   )
 )
 app.use(cors()) // Allow cross-origin requests
+app.use(express.static('dist')) // Serve the frontend
 
 // Root route
 app.get('/', (request, response) => {
